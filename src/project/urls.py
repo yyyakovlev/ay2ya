@@ -11,7 +11,7 @@ def view(r):
         return HttpResponse(f.read())
 
 def jpg(r):
-    jpg = here.parent.parent / "src/pic/img-7655.jpg"
+    jpg = here.parent.parent / "src/pic/IMG-7655.jpg"
     with jpg.open('rb') as f:
         return HttpResponse(f.read(), content_type="img/jpeg")
 
