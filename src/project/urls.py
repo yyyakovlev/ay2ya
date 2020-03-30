@@ -10,10 +10,10 @@ def view(r):
     with index.open() as f:
         return HttpResponse(f.read())
 
-def view(r):
+def view_pic(r):
     jpg = here.parent.parent / "pic/*.jpg"
-    with jpg.open() as f:
-        return HttpResponse(f.read())
+    with jpg.open('rb') as f:
+        return HttpResponse(f.read(), content_type="img/jpg")
 
 
 urlpatterns = [
