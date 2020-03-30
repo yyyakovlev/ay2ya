@@ -10,7 +10,7 @@ def view(r):
     with index.open() as f:
         return HttpResponse(f.read())
 
-def view_pic(r):
+def jpg(r):
     jpg = here.parent.parent / "pic/*.jpg"
     with jpg.open('rb') as f:
         return HttpResponse(f.read(), content_type="img/jpg")
