@@ -30,5 +30,5 @@ urlpatterns = [
     path('jpg/', jpg),
     path('jpg2/', jpg2),
     path('jpg3/', jpg3),
-    path('', view),
+    path('', view)
 ]
