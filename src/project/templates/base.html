@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="RU">
+
+<head>
+     <meta charset="UTF-8">
+    <meta name="keywords" content="Yuriy Yakovlev SAP PYTHON">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="/dj/">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>{% block title%} {% endblock %}</title>
+
+   <style>
+
+   .leftimg {
+    float:left; /* Выравнивание по левому краю */
+    margin: 7px 7px 20px 7px; /* Отступы вокруг картинки */
+   }
+    </style>
+
+</head>
+
+
+    <body background="/body_bg/"> <br><br><br>
+    <table align="center" alt="table header" border="0">
+
+        <tr>
+            <td width="1000" height="50" bgcolor="#a9a9a9" background="/header_bg/"  align="center">
+                <h2 >
+                    <a href="/indx/">Начало</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/view_cv/">Резюме</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/view_prj/">Проекты</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/admin">DjAdm</a></h2>
+
+            </td>
+
+        </tr>
+    </table>
+
+    <br>
+
+
+    {% block text %}
+    {% endblock %}
+
+    <br>
+
+<table align="center">
+        <tr   bgcolor="white" border="0">
+            <td width="1000" height="50" align="center">
+            <a href="mailto:yyyakovlev@gmail.com"><img src="/gmail/" width="50" height="50"></a>&nbsp;&nbsp;&nbsp;
+            <a href="https://t.me/yyyakovlev"><img src="/telega/" width="50" height="50"></a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+
+</html>
