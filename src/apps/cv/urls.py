@@ -1,6 +1,6 @@
 from django.urls import path
-from apps.cv.views import view_cv
+from apps.cv.views import CvView
 
 urlpatterns = [
-    path('', view_cv),
+    path('', CvView.as_view()),
 ]
