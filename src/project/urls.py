@@ -1,8 +1,14 @@
 from pathlib import Path
+
+
 from django.contrib import admin
 from django.http import HttpResponse
+from django.urls import include
 from django.urls import path
-from django.shortcuts import render
+# #
+# from apps.index.views import view
+# from apps.cv.views import view_cv
+# from apps.projects.views import view_prj
 
 here = Path(__file__).parent.resolve()
 
@@ -10,38 +16,14 @@ def r_static (fn, content_type):
     with fn.open('rb') as f:
         return HttpResponse(f.read(), content_type)
 
-# def view(r):
-#     return r_static(here.parent.parent / "PROJECT_DIR/templates/index.html", None)
-
-def view(req):
-    return render(req, "index.html")
-
-def view_cv(req):
-    return render(req, "cv.html")
-
-def view_prj(req):
-    return render(req, "projects.html")
-#
-# def view_ct(req):
-#     return render(req, "contacts.html")
-
-    # index = here.parent.parent / "index.html"
-    # with index.open() as f:
-    #     return HttpResponse(f.read())
-
 def dj(r):
     return r_static( here.parent.parent / "src/pic/dj.png", "img/jpeg")
 
 def jpg(r):
     return r_static(here.parent.parent / "src/pic/IMG-7655.jpg", "img/jpeg")
 
-    # jpg = here.parent.parent / "src/pic/IMG-7655.jpg"
-    # with jpg.open('rb') as f:
-    #     return HttpResponse(f.read(), content_type="img/jpeg")
-
 def gmail(r):
     return r_static(here.parent.parent / "src/pic/gmail.png", "img/jpeg")
-
 
 def telega(r):
     return r_static( here.parent.parent / "src/pic/telegram.png", "img/jpeg")
@@ -63,11 +45,10 @@ urlpatterns = [
     path('telega/', telega),
     path('body_bg/', body_bg),
     path('header_bg/', header_bg),
-    path('', view),
-    path('indx/', view),
-    path('view_cv/', view_cv),
-    path('view_prj/', view_prj),
-    # path('view_ct/', view_ct),
+    path('', include('apps.index.urls')),
+    path('indx/', include('apps.index.urls')),
+    path('view_cv/', include('apps.cv.urls')),
+    path('view_prj/', include('apps.projects.urls')),
 ]
 
 # def view1(r):
