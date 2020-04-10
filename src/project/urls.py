@@ -5,10 +5,10 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import include
 from django.urls import path
-# #
-# from apps.index.views import view
-# from apps.cv.views import view_cv
-# from apps.projects.views import view_prj
+
+from apps.index.views import view
+from apps.cv.views import view_cv
+from apps.projects.views import view_prj
 
 here = Path(__file__).parent.resolve()
 

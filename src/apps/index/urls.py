@@ -4,6 +4,5 @@ from apps.index.views import view
 
 urlpatterns = [
     path('', view),
-    path('indx/', view),
 
 ]
