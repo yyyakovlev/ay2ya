@@ -1,2 +1,2 @@
-web: python src/manage.py runserver 0.0.0.0:$PORT
+web: ./runserver_heroku.sh
 release: python src/manage.py migrate

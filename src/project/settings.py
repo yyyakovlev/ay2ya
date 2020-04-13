@@ -1,7 +1,10 @@
 
 import os
-from pathlib import Path
+import dj_database_url
 
+from os import getenv
+from pathlib import Path
+from dynaconf import settings as _settings
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -10,16 +13,19 @@ BASE_DIR = PROJECT_DIR.parent.resolve()
 REPO_DIR = BASE_DIR.parent.resolve()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%jb(pw*+h=g25+bwhn7$))d8(464k7lpansid%=92mf-v_qegq'
+SECRET_KEY = _settings.SECRET_KEY
+    # '%jb(pw*+h=g25+bwhn7$))d8(464k7lpansid%=92mf-v_qegq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = _settings.DEBUG
+        # True
 
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    "yyyakovlev.herokuapp.com",
-]
+ALLOWED_HOSTS = _settings.ALLOWED_HOSTS
+#     [
+#     "127.0.0.1",
+#     "localhost",
+#     "yyyakovlev.herokuapp.com",
+# ]
 
 
 # Application definition
@@ -72,11 +78,16 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # Database
 
+_db_url = _settings.DATABASE_URL
+if _settings.ENV_FOR_DYNACONF == "heroku":
+    _db_url = getenv("DATABASE_URL")
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': (BASE_DIR / 'db.sqlite3').as_posix(),
-    }
+    "default": dj_database_url.parse(_db_url, conn_max_age=600),
+    #     {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': (BASE_DIR / 'db.sqlite3').as_posix(),
+    # }
 }
 
 

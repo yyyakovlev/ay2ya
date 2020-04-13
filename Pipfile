@@ -9,3 +9,5 @@ verify_ssl = true
 django = "*"
 tree = "*"
 whitenoise = "*"
+dj-database-url = "*"
+dynaconf = {extras = ["yaml"],version = "*"}
