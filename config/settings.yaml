@@ -2,7 +2,7 @@ default:
   ALLOWED_HOSTS: []
   DATABASE_URL: ""
   DEBUG: true
-  SECRET_KEY: ""
+  SECRET_KEY: "%jb(pw*+h=g25+bwhn7$))d8(464k7lpansid%=92mf-v_qegq"
   SENTRY_DSN: ""
 
 development:
