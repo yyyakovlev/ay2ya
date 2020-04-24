@@ -9,16 +9,14 @@ class Techno(m.Model):
 
 
 class Project(m.Model):
-    start = m.DateField(null=True, blank=True)
+    start = m.DateField(null=True, blank=True) #default=utcnow
     end = m.DateField(null=True, blank=True)
     comp = m.TextField(null=True, blank=True)
     summary = m.TextField(null=True, unique=True)
-    # python = m.BooleanField() - чек бокс 1 или 0
-    # django = m.BooleanField() - чек бокс 1 или 0
-    technos = m.ManyToManyField(Techno, related_name="project") #связка двух моделей по projects
+    technos = m.ManyToManyField("Techno", related_name="project") #связка двух моделей по projects
 
 class Resposibility(m.Model):
-    project = m.ForeignKey(Project, on_delete=m.CASCADE, related_name='responsibilities')
+    project = m.ForeignKey("Project", on_delete=m.CASCADE, related_name='responsibilities')
     summary = m.TextField()
 
     #

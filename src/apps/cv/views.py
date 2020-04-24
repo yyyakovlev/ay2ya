@@ -13,7 +13,8 @@ from apps.cv.models import Project
 
 class CvView(ListView):
     template_name = "cv.html"
-    queryset = Project.objects.filter(is_hidden=False)
+    # queryset = Project.objects.filter(is_hidden=False)
+    model = Project
 
 
 
