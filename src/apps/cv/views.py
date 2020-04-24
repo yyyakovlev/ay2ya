@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
-from django.views.generic import TemplateView
+# from django.views.generic import TemplateView
 from apps.cv.models import Project
 
 # def view_cv(req):
@@ -11,9 +11,9 @@ from apps.cv.models import Project
 #     def get(self, req):
 #         return render(req, "cv.html")
 
-class CvView(TemplateView):
+class CvView(ListView):
     template_name = "cv.html"
-    # queryset = Project.objects.filter(is_hidden=False)
+    queryset = Project.objects.filter(is_hidden=False)
 
 
 

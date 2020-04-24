@@ -18,7 +18,7 @@ class Project(m.Model):
     technos = m.ManyToManyField(Techno, related_name="project") #связка двух моделей по projects
 
 class Resposibility(m.Model):
-    project = m.ForeignKey('Project', on_delete=m.CASCADE, related_name='responsibilities')
+    project = m.ForeignKey(Project, on_delete=m.CASCADE, related_name='responsibilities')
     summary = m.TextField()
 
     #
