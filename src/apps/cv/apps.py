@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class CvConfig(AppConfig):
-    name = 'cv'
+    label = "Cv"
+    name = "apps.cv"

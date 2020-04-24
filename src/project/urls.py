@@ -34,6 +34,21 @@ def body_bg(r):
 def header_bg(r):
     return r_static( here.parent.parent / "src/pic/header.jpg", "img/jpeg")
 
+def comp_lx(r):
+    return r_static( here.parent.parent / "src/pic/comp_lx.png", "img/jpeg")
+
+def comp_tl(r):
+    return r_static( here.parent.parent / "src/pic/comp_tl.png", "img/jpeg")
+
+def comp_rfi(r):
+    return r_static( here.parent.parent / "src/pic/comp_rfi.png", "img/jpeg")
+
+def comp_tms(r):
+    return r_static( here.parent.parent / "src/pic/comp_tms.svg", "img/jpeg")
+
+def cv_pdf(r):
+    return r_static( here.parent.parent / "src/apps/cv/files/my_cv.pdf", "pdf")
+
 
 
 urlpatterns = [
@@ -43,6 +58,11 @@ urlpatterns = [
     path('gmail/', gmail),
     path('telega/', telega),
     path('body_bg/', body_bg),
+    path('comp_lx/', comp_lx),
+    path('comp_tp/', comp_tl),
+    path('comp_rfi/', comp_rfi),
+    path('comp_tms/', comp_tms),
+    path('cv_pdf/', cv_pdf),
     path('header_bg/', header_bg),
     path('', include('apps.index.urls')),
     path('indx/', include('apps.index.urls')),
