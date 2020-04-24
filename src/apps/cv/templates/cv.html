@@ -22,13 +22,25 @@
 
                 {% for project in object_list %}
                     <article>
-                        <section>
                             <p>{{ project.comp | safe }}</p>
                             <p>С  {{ project.start }} до  {{ project.end  }}</p>
                             <p>{{ project.summary }}</p>
-                            <p>{{ project.technos.all }}</p>
+
+                            <h4>Обязанности:</h4>
+                            {% if responsibilities.summary.count %}
+                                    <ul>
+                                        <li>{{ responsibilities.summary }}</li>
+                                    </ul>
+                            {% endif %}
+
+                            <h4>Навыки:</h4>
+                            {% if project.technos.count %}
+                                <ul>
+                                  <li>{{ project.technos }}</li>
+                                </ul>
+                            {% endif %}
                             <br>
-                        </section>
+
                     </article>
                 {% endfor %}
 
