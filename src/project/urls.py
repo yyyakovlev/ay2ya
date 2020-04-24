@@ -59,7 +59,7 @@ urlpatterns = [
     path('telega/', telega),
     path('body_bg/', body_bg),
     path('comp_lx/', comp_lx),
-    path('comp_tp/', comp_tl),
+    path('comp_tl/', comp_tl),
     path('comp_rfi/', comp_rfi),
     path('comp_tms/', comp_tms),
     path('cv_pdf/', cv_pdf),

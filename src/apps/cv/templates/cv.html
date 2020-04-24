@@ -24,11 +24,10 @@
                     <article>
                         <section>
                             <p>{{ project.comp | safe }}</p>
-                            <p>С  {{ project.start }}
-                                До  {{ project.end  }}
-                               </p><br>
+                            <p>С  {{ project.start }} до  {{ project.end  }}</p>
                             <p>{{ project.summary }}</p>
-                            <p>{{ project.technos }}</p>
+                            <p>{{ project.technos.all }}</p>
+                            <br>
                         </section>
                     </article>
                 {% endfor %}
