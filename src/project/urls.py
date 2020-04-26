@@ -44,7 +44,7 @@ def comp_rfi(r):
     return r_static( here.parent.parent / "src/pic/comp_rfi.png", "img/jpeg")
 
 def comp_tms(r):
-    return r_static( here.parent.parent / "src/pic/comp_tms.svg", "img/jpeg")
+    return r_static( here.parent.parent / "src/pic/comp_tms.png", "img/jpeg")
 
 def cv_pdf(r):
     return r_static( here.parent.parent / "src/apps/cv/files/my_cv.pdf", "pdf")
