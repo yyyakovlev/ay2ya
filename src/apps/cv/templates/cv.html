@@ -31,14 +31,12 @@
                      </section>
 
                      <section>
-                     <h4>Обзанности:</h4>
-                         {% if project.responsibility %}
-                                <ul>
-                                    {% for responsibilitys in object_list %}
-                                        <li>{{ responsibility.summary }}</li>
+                     <h4>Обязанности:</h4>
+                                    <ul>
+                                    {% for resp in project.responsibilities.all %}
+                                        <li>{{ resp.summary }}</li>
                                     {% endfor %}
-                                </ul>
-                        {% endif %}
+                                    </ul>
                      </section>
 
                      <section>
