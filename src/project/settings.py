@@ -5,6 +5,7 @@ import dj_database_url
 from os import getenv
 from pathlib import Path
 from dynaconf import settings as _settings
+from django.urls import reverse_lazy
 
 
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'apps.index',
     'apps.cv',
     'apps.projects',
+    'apps.blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,8 +125,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
 #Sentry
 if not DEBUG:
     import sentry_sdk
@@ -146,3 +146,6 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = REPO_DIR / ".static"
+
+LOGIN_URL = reverse_lazy("onboarding blabla") # перенаправление юзера если он зашел туда куда нельзя
+LOGIN_REDIRECT_URL = reverse_lazy("blog:all_post") # перенаправление юзера после логина
