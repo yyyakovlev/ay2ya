@@ -1,10 +1,13 @@
 
 
 import dj_database_url
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 from os import getenv
 from pathlib import Path
 from dynaconf import settings as _settings
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -122,6 +125,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+
+#Sentry
+# if not DEBUG:
+
+sentry_sdk.init(
+    dsn=_settings.SENTRY_DSN,
+    integrations=[DjangoIntegration()],
+    send_default_pii=True,
+    )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

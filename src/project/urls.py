@@ -49,10 +49,12 @@ def comp_tms(r):
 def cv_pdf(r):
     return r_static( here.parent.parent / "src/apps/cv/files/my_cv.pdf", "pdf")
 
-
+def trigger_error(request):
+    division_by_zero = 1 / 0
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('sentry-debug/', trigger_error),
     path('jpg/', jpg),
     path('dj/', dj),
     path('gmail/', gmail),
