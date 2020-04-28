@@ -126,15 +126,15 @@ USE_L10N = True
 USE_TZ = True
 
 #Sentry
-if not DEBUG:
-    import sentry_sdk
-    from sentry_sdk.integrations.django import DjangoIntegration
+# if not DEBUG:
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
-    sentry_sdk.init(
-        dsn=_settings.SENTRY_DSN,
-        integrations=[DjangoIntegration()],
-        send_default_pii=True,
-        )
+sentry_sdk.init(
+    dsn=_settings.SENTRY_DSN,
+    integrations=[DjangoIntegration()],
+    send_default_pii=True,
+    )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
