@@ -147,5 +147,5 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = REPO_DIR / ".static"
 
-LOGIN_URL = reverse_lazy("onboarding blabla") # перенаправление юзера если он зашел туда куда нельзя
-LOGIN_REDIRECT_URL = reverse_lazy("blog:all_post") # перенаправление юзера после логина
+# LOGIN_URL = reverse_lazy("onboarding blabla") # перенаправление юзера если он зашел туда куда нельзя
+# LOGIN_REDIRECT_URL = reverse_lazy("blog:all_post") # перенаправление юзера после логина
