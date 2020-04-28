@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Post</title>
+{% extends "base.html" %}
 
-    <h1> {{ object.title }}</h1>
-    <p> {{ object.content }}</p>
+{% load static %}
 
+{% block title %}AY2YA DEV POST{% endblock %}
 
-</head>
-<body>
+{% block text %}
 
-</body>
-</html>
+<table align="center" bgcolor="white" border="0">
+        <tr>
+            <td width="1000" >
+                <h1> {{ object.title }}</h1>
+                <p> {{ object.content }}</p>
+            </td>
+        </tr>
+</table>
+
+{% endblock %}

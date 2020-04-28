@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog</title>
+{% extends "base.html" %}
 
+{% load static %}
+
+{% block title %}AY2YA DEV BLOG{% endblock %}
+
+{% block text %}
+
+<table align="center" bgcolor="white" border="0">
+        <tr>
+            <td width="1000" >
     {% for post in object_list %}
 
-    <a href="{{ post.get_absolute_url }}"><h1> {{post.pk}} - {{ post.title }}</h1></a>
+    <a href="{{ post.get_absolute_url }}"><h3> {{post.pk}} - {{ post.title }}</h3></a>
 
     {% endfor %}
+            </td>
+        </tr>
+</table>
 
-</head>
-<body>
-
-</body>
-</html>
+{% endblock %}

@@ -52,6 +52,9 @@ def cv_pdf(r):
 def video_bot(r):
     return r_static( here.parent.parent / "src/apps/projects/files/bot_replay.mp4", "video/mp4")
 
+def video_x0(r):
+    return r_static( here.parent.parent / "src/apps/projects/files/x0_game.mp4", "video/mp4")
+
 def trigger_error(request):
     division_by_zero = 1 / 0
 
@@ -69,6 +72,7 @@ urlpatterns = [
     path('comp_tms/', comp_tms),
     path('cv_pdf/', cv_pdf),
     path('video_bot/', video_bot),
+    path('video_x0/', video_x0),
     path('header_bg/', header_bg),
     path('', include('apps.index.urls')),
     path('indx/', include('apps.index.urls')),
