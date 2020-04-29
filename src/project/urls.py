@@ -10,57 +10,60 @@ from django.urls import path
 # from apps.cv.views import view_cv
 # from apps.projects.views import view_prj
 
-here = Path(__file__).parent.resolve()
+PROJECT_DIR = Path(__file__).parent.resolve()
+BASE_DIR = PROJECT_DIR.parent.resolve()
+REPO_DIR = BASE_DIR.parent.resolve()
+STATIC_ROOT = REPO_DIR / ".static"
 
 def r_static (fn, content_type):
     with fn.open('rb') as f:
         return HttpResponse(f.read(), content_type)
 
+# def dj(r):
+#     return r_static( here.parent.parent / "src/pic/dj.png", "img/jpeg")
+
 def dj(r):
-    return r_static( here.parent.parent / "src/pic/dj.png", "img/jpeg")
+    return r_static( STATIC_ROOT / "dj.png", "img/jpeg")
 
 def jpg(r):
-    return r_static(here.parent.parent / "src/pic/IMG-7655.jpg", "img/jpeg")
+    return r_static( STATIC_ROOT / "IMG-7655.jpg", "img/jpeg")
 
 def gmail(r):
-    return r_static(here.parent.parent / "src/pic/gmail.png", "img/jpeg")
+    return r_static( STATIC_ROOT / "gmail.png", "img/jpeg")
 
 def telega(r):
-    return r_static( here.parent.parent / "src/pic/telegram.png", "img/jpeg")
+    return r_static( STATIC_ROOT / "telegram.png", "img/jpeg")
 
 def body_bg(r):
-    return r_static( here.parent.parent / "src/pic/body.jpg", "img/jpeg")
+    return r_static( STATIC_ROOT / "body.jpg", "img/jpeg")
 
 def header_bg(r):
-    return r_static( here.parent.parent / "src/pic/header.jpg", "img/jpeg")
+    return r_static( STATIC_ROOT / "header.jpg", "img/jpeg")
 
 def comp_lx(r):
-    return r_static( here.parent.parent / "src/pic/comp_lx.png", "img/jpeg")
+    return r_static( STATIC_ROOT / "comp_lx.png", "img/jpeg")
 
 def comp_tl(r):
-    return r_static( here.parent.parent / "src/pic/comp_tl.png", "img/jpeg")
+    return r_static( STATIC_ROOT / "comp_tl.png", "img/jpeg")
 
 def comp_rfi(r):
-    return r_static( here.parent.parent / "src/pic/comp_rfi.png", "img/jpeg")
+    return r_static( STATIC_ROOT / "comp_rfi.png", "img/jpeg")
 
 def comp_tms(r):
-    return r_static( here.parent.parent / "src/pic/comp_tms.png", "img/jpeg")
+    return r_static( STATIC_ROOT / "comp_tms.jpg", "img/jpeg")
 
 def cv_pdf(r):
-    return r_static( here.parent.parent / "src/apps/cv/files/my_cv.pdf", "pdf")
+    return r_static( STATIC_ROOT / "files/my_cv.pdf", "pdf")
 
 def video_bot(r):
-    return r_static( here.parent.parent / "src/apps/projects/files/bot_replay.mp4", "video/mp4")
+    return r_static( STATIC_ROOT / "files/bot_replay.mp4", "video/mp4")
 
 def video_x0(r):
-    return r_static( here.parent.parent / "src/apps/projects/files/x0_game.mp4", "video/mp4")
-
-def trigger_error(request):
-    division_by_zero = 1 / 0
+    return r_static( STATIC_ROOT / "files/x0_game.mp4", "video/mp4")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sentry-debug/', trigger_error),
+    # path('sentry-debug/', trigger_error),
     path('jpg/', jpg),
     path('dj/', dj),
     path('gmail/', gmail),
