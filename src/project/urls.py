@@ -53,13 +53,13 @@ def comp_tms(r):
     return r_static( STATIC_ROOT / "comp_tms.jpg", "img/jpeg")
 
 def cv_pdf(r):
-    return r_static( STATIC_ROOT / "files/my_cv.pdf", "pdf")
+    return r_static( STATIC_ROOT / "my_cv.pdf", "pdf")
 
 def video_bot(r):
-    return r_static( STATIC_ROOT / "files/bot_replay.mp4", "video/mp4")
+    return r_static( STATIC_ROOT / "bot_replay.mp4", "video/mp4")
 
 def video_x0(r):
-    return r_static( STATIC_ROOT / "files/x0_game.mp4", "video/mp4")
+    return r_static( STATIC_ROOT / "x0_game.mp4", "video/mp4")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
