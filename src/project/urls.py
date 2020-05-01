@@ -25,7 +25,7 @@ def dj(r):
     return r_static( STATIC_ROOT / "dj.png", "img/jpeg")
 
 def jpg(r):
-    return r_static( STATIC_ROOT / "IMG-7655.jpg", "img/jpeg")
+    return r_static( STATIC_ROOT / "my_img.jpg", "img/jpeg")
 
 def gmail(r):
     return r_static( STATIC_ROOT / "gmail.png", "img/jpeg")
