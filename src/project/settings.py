@@ -1,6 +1,7 @@
 
 
 import dj_database_url
+import grappelli
 
 from os import getenv
 from pathlib import Path
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = _settings.ALLOWED_HOSTS
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

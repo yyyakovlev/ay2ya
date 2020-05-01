@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import include
@@ -62,6 +61,7 @@ def video_x0(r):
     return r_static( STATIC_ROOT / "x0_game.mp4", "video/mp4")
 
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('admin/', admin.site.urls),
     # path('sentry-debug/', trigger_error),
     path('jpg/', jpg),

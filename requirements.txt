@@ -19,6 +19,7 @@ cryptography==2.9
 distlib==0.3.0
 dj-config-url==0.1.1
 Django==3.0.5
+django-grappelli==2.14.1
 dynaconf==2.2.3
 echo==0.1
 filelock==3.0.12
