@@ -16,13 +16,8 @@ class CvView(ListView):
     # queryset = Project.objects.filter(is_hidden=False)
     model = Project
 
-    # def get_queryset(self):
-    #     return self.model.objects.filter(pk__in=
-    #     Project.objects.order_by('start'))
-
     def get_queryset(self):
-        return self.model.objects.order_by('-start') #.filter(pk__in=Project.objects.values('end'))
-
+        return self.model.objects.order_by('start')
 
     # def get_context_data(self, **kwargs):
     #
