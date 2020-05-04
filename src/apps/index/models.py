@@ -1,5 +1,6 @@
 from django.db import models as m
 
+
 class UserInfo(m.Model):
     name = m.TextField(unique=True)
     grts = m.TextField(null=True, blank=True)
@@ -11,10 +12,6 @@ class UserInfo(m.Model):
     # Отображение текста в админке
     def __str__(self):
         return f"UserInfo(id={self.pk}, name={self.name!r})"
-
-
-
-
 
 
 # a = UserInfo()

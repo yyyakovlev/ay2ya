@@ -14,7 +14,7 @@ class IndexView(ListView):
     def get_context_data(self, **kwargs):
 
         # parent_ctx=TemplateView.get_context_data()
-        parent_ctx = super().get_context_data() #super - обращение к родителю
+        parent_ctx = super().get_context_data()  # super - обращение к родителю
 
         info = UserInfo.objects.first()
 
@@ -23,8 +23,6 @@ class IndexView(ListView):
         ctx.update(parent_ctx)
 
         return ctx
-
-
 
     # def get(self, req):
     #     return render(req, "index.html")

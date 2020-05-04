@@ -15,7 +15,13 @@ heroku:
     - localhost
   DEBUG: false
 
+test:
+  MODE_CASHING: 1
+  MODE_DEBUG: 1
+  SECRET_KEY: "1"
+
+
 travis:
-  DATABASE_URL: "postgresql://postgres@localhost:5432/sd"
+  DATABASE_URL: "postgresql://postgres@localhost:5432/test"
   DEBUG: true
   SECRET_KEY: "1"
