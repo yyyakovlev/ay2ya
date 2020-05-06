@@ -1,2 +1,3 @@
-DROP DATABASE "sidorov-dev";
-CREATE DATABASE "sidorov-dev";
+DROP DATABASE IF EXISTS "test_ay2ya";
+DROP DATABASE IF EXISTS "ay2ya";
+CREATE DATABASE "ay2ya";
