@@ -9,12 +9,12 @@ class Test(TestCase):
         self.cli = Client()
 
     def test_get(self):
-        resp = self.cli.get("/view_blg/")
+        resp = self.cli.get("post/<int:pk>/")
         self.assertEqual(resp.status_code, 200)
 
-        self.assertEqual(resp.resolver_match.app_name, "blog")
-        self.assertEqual(resp.resolver_match.url_name, "post")
-        self.assertEqual(resp.resolver_match.view_name, "post")
+        self.assertEqual(resp.resolver_match.app_name, '')
+        self.assertEqual(resp.resolver_match.url_name, 'post')
+        self.assertEqual(resp.resolver_match.view_name, 'post')
         self.assertEqual(
             resp.resolver_match.func.__name__, BlogPostView.as_view().__name__
         )

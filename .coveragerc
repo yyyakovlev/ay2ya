@@ -9,4 +9,4 @@ source = .
 [report]
 
 fail_under = 96
-skip_covered = False
+skip_covered = True

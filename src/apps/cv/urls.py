@@ -6,5 +6,5 @@ from apps.cv.views import CvView
 # app_name = CvConfig.label
 
 urlpatterns = [
-    path("", CvView.as_view()),
+    path("", CvView.as_view(), name="cv"),
 ]

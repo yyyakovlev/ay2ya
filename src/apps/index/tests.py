@@ -9,7 +9,7 @@ class Test(TestCase):
         self.cli = Client()
 
     def test_get(self):
-        resp = self.cli.get(" ")
+        resp = self.cli.get("")
         self.assertEqual(resp.status_code, 200)
 
         self.assertEqual(resp.resolver_match.app_name, "index")
