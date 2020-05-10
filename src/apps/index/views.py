@@ -15,13 +15,9 @@ class IndexView(ListView):
 
         # parent_ctx=TemplateView.get_context_data()
         parent_ctx = super().get_context_data()  # super - обращение к родителю
-
         info = UserInfo.objects.first()
-
         ctx = {"name": info.name, "grts": info.grts, "age": info.age}
-
         ctx.update(parent_ctx)
-
         return ctx
 
     # def get(self, req):

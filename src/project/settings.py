@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # "apps.onboarding.apps.OnboardingConfig",
     "apps.index",
     "apps.cv",
     "apps.projects",
@@ -138,5 +139,18 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = REPO_DIR / ".static"
 
-# LOGIN_URL = reverse_lazy("onboarding blabla") # перенаправление юзера если он зашел туда куда нельзя
-# LOGIN_REDIRECT_URL = reverse_lazy("blog:all_post") # перенаправление юзера после логина
+
+
+# LOGIN_URL = reverse_lazy("templates:sign_in")
+# LOGIN_REDIRECT_URL = reverse_lazy("templates:me")
+
+# SITE_ID = _settings.SITE_ID
+#
+# EMAIL_HOST = _settings.EMAIL_HOST
+# EMAIL_HOST_PASSWORD = _settings.EMAIL_HOST_PASSWORD
+# EMAIL_HOST_USER = _settings.EMAIL_HOST_USER
+# EMAIL_PORT = _settings.EMAIL_PORT
+# EMAIL_USE_SSL = _settings.EMAIL_USE_SSL
+# EMAIL_USE_TLS = _settings.EMAIL_USE_TLS
+#
+# EMAIL_FROM = _settings.EMAIL_FROM
