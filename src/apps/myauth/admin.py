@@ -1,11 +1,7 @@
 # from django import forms
-from django.contrib import admin
-from django.contrib.admin import ModelAdmin
-
-from apps.blog.models import BlogPost
-from apps.cv.models import Project
-from apps.cv.models import Resposibility
-from apps.cv.models import Techno
+# from django.contrib import admin
+# from django.contrib.admin import ModelAdmin
+# from apps.myauth.models import MyAuth
 
 # class UserInfoAdminForm(forms.ModelForm):
 #     class Meta:
@@ -20,8 +16,7 @@ from apps.cv.models import Techno
 # @admin.register(Project)
 # class CvAdminModel(ModelAdmin): #Появится в админке Джанго
 #     pass
-
-
-@admin.register(BlogPost)
-class BlogPostAdminModel(admin.ModelAdmin):  # Появится в админке Джанго
-    pass
+#
+# @admin.register(BloggPost)
+# class BloggPostAdminModel(admin.ModelAdmin): #Появится в админке Джанго
+#     pass

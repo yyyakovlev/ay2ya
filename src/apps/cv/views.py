@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
+
 # from django.views.generic import TemplateView
 from apps.cv.models import Project
 
@@ -11,13 +12,14 @@ from apps.cv.models import Project
 #     def get(self, req):
 #         return render(req, "cv.html")
 
+
 class CvView(ListView):
     template_name = "cv.html"
     # queryset = Project.objects.filter(is_hidden=False)
     model = Project
 
     def get_queryset(self):
-        return self.model.objects.order_by('start')
+        return self.model.objects.order_by("start")
 
     # def get_context_data(self, **kwargs):
     #
