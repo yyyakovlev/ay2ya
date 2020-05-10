@@ -140,7 +140,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = REPO_DIR / ".static"
 
 
-
 # LOGIN_URL = reverse_lazy("templates:sign_in")
 # LOGIN_REDIRECT_URL = reverse_lazy("templates:me")
 
