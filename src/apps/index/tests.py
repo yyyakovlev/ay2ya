@@ -9,7 +9,7 @@
 #         self.cli = Client()
 #
 #     def test_get(self):
-#         # breakpoint()
+#
 #         resp = self.cli.get('')
 #         self.assertEqual(resp.status_code, 200)
 #
