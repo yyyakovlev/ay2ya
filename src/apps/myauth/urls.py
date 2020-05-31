@@ -1,15 +1,14 @@
+from django.contrib.auth import views
 from django.urls import path
 
-from apps.blog import views
 
-# from apps.blog.apps import MyAuthConfig
-
-# from apps.cv.apps import CvConfig
-# from apps.cv.views import CvView
-#
-# app_name = BlogConfig.label
-#
-# urlpatterns = [
-#     path('', views.BlogView.as_view(), name="all_post"),
-#     path('post/<int:pk>/', views.BlogPostView.as_view(), name="post"),
-# ]
+urlpatterns = [
+    path('', views.LoginView.as_view(), name='login'),
+    path('logout/', views.LogoutView.as_view(), name='logout'),
+    path('password-reset/', views.PasswordResetView.as_view(), name='password_reset'),
+    path('password-reset/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path('password-change/', views.PasswordChangeView.as_view(), name='password_change'),
+    path('password-change/done/', views.PasswordChangeDoneView.as_view(), name='password_change_done'),
+    ]

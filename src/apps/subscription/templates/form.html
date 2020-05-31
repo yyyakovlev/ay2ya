@@ -1,0 +1,5 @@
+<form action="{% url 'subscription' %}" method="post">
+    {% csrf_token %}
+    {{ subscription_form }}
+    <button><img src="/telega/" width="35" height="30"></button>
+</form>

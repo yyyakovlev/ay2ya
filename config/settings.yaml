@@ -4,6 +4,10 @@ default:
   DEBUG: true
   SECRET_KEY: ""
   SENTRY_DSN: ""
+  RECAPTCHA_PUBLIC_KEY: ""
+  RECAPTCHA_PRIVATE_KEY: ""
+  BOT_TOKEN: ""
+  TELEGA_ADMIN: ""
 
 development:
   DEBUG: true
