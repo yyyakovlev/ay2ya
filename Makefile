@@ -78,6 +78,7 @@ report:
 
 .PHONY: venv
 venv:
+	pipenv install
 	pipenv install --dev
 
 
