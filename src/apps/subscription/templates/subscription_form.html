@@ -1,5 +1,16 @@
-<form action="{% url 'subscription' %}" method="post">
+{% extends "base.html" %}
+
+{% load static %}
+{% load subscription_tags %}
+
+{% block title %}AY2YA DEV PROJECT{% endblock %}
+
+{% block text %}
+
+<form action="{% url 'Subscription' %}" method="post">
     {% csrf_token %}
     {{ subscription_form }}
     <button><img src="/telega/" width="35" height="30"></button>
 </form>
+
+{% endblock %}
