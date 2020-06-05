@@ -6,24 +6,17 @@
 
 {% block text %}
 
+
  <table align="center" bgcolor="white" border="0">
         <tr>
             <td width="1000" >
-                <article>
-                    <p>Моя основная работа - это внедрение информационных систем класса ERP</p>
-                    <p>И если у Вас завалялись пара лишних "лимонов" - звоните срочно</p>
-                    <p>Полное резюме:</p>
-                    <form method="link">
-                    <a href="/cv_pdf/" target="_blank" type="application/pdf"><input type="button" value="Открыть CV"></a>
-                    </form>
 <br><br>
-                </article>
             </td>
         </tr>
          <tr>
              <td>
                 <h2>Трудовая история:</h2>
-
+        {% if user.is_authenticated %}
                  <article>
                      <section>
                      {% for project in object_list %}
@@ -55,5 +48,8 @@
             </td>
         </tr>
  </table>
-
+        {% else %}
+        <span> Просмотр доступен только зарегестрированным пользователям </span>
+        {% endif %}
+<br>
 {% endblock %}

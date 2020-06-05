@@ -95,6 +95,7 @@ urlpatterns = [
     path("video_x0/", video_x0),
     path("header_bg/", header_bg),
     path("", include("apps.index.urls")),
+    path("", include("apps.api.urls")),
     path("account/", include("allauth.urls")),
     path("indx/", include("apps.index.urls")),
     path("login/", include("apps.myauth.urls")),

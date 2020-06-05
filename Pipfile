@@ -9,8 +9,7 @@ codecov = "*"
 coverage = "*"
 isort = "*"
 pudb = "*"
-django-allauth = "*"
-telebot = "*"
+v = {editable = true,version = "*"}
 
 [packages]
 django = "*"
@@ -21,6 +20,7 @@ dynaconf = {extras = ["yaml"],version = "*"}
 psycopg2-binary = "*"
 sentry-sdk = "*"
 django-grappelli = "*"
+djangorestframework = "*"
 boto3 = "*"
 django-recaptcha  = "*"
 django-allauth = "*"

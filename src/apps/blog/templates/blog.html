@@ -9,11 +9,17 @@
 <table align="center" bgcolor="white" border="0">
         <tr>
             <td width="1000" >
-    {% for post in object_list %}
+        {% if user.is_authenticated %}
+            {% for post in object_list %}
 
-    <a href="{{ post.get_absolute_url }}"><h3> {{post.pk}} - {{ post.title }}</h3></a>
+                 <a href="{{ post.get_absolute_url }}"><h3> {{post.pk}} - {{ post.title }}</h3></a>
 
-    {% endfor %}
+             {% endfor %}
+
+        {% else %}
+        <span> Вы не авторизованы для просмотра блога </span>
+
+        {% endif %}
             </td>
         </tr>
 </table>

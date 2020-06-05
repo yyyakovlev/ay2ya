@@ -1,9 +1,7 @@
 from django.views.generic import CreateView
 
-from .models import Subscription
-from .forms import SubscriptionForm
-
-
+from apps.subscription.forms import SubscriptionForm
+from apps.subscription.models import Subscription
 
 
 class SubscriptionView(CreateView):

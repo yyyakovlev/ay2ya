@@ -2,11 +2,11 @@
 
 branch = True
 omit =
-    src/manage.py
+    src/manage.py \
     src/project/settings.py
 source = .
 
 [report]
 
-fail_under = 88
-skip_covered = True
+fail_under = 78
+skip_covered = False

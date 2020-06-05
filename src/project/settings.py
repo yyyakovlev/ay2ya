@@ -1,15 +1,15 @@
 from os import getenv
 from pathlib import Path
 
+import allauth
+import crispy_forms
 import dj_database_url
 import grappelli
-import crispy_forms
-import allauth
-# import telebot
-
 from allauth import account
 from django.urls import reverse_lazy
 from dynaconf import settings as _settings
+
+# import telebot
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -40,24 +40,24 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "crispy_forms",
-    'captcha',
+    "captcha",
+    "rest_framework",
     "apps.index",
     "apps.cv",
     "apps.projects",
     "apps.blog.apps.BlogConfig",
     "apps.myauth",
     "apps.subscription",
+    "apps.api",
     "allauth",
     "allauth.account",
-
-
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 RECAPTCHA_PUBLIC_KEY = _settings.RECAPTCHA_PUBLIC_KEY
 RECAPTCHA_PRIVATE_KEY = _settings.RECAPTCHA_PRIVATE_KEY
-RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_DEFAULT_ACTION = "generic"
 RECAPTCHA_SCORE_THERSHOLD = 0.5
 
 MIDDLEWARE = [
@@ -109,7 +109,9 @@ DATABASES = {
 # Password validation
 
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    },
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
