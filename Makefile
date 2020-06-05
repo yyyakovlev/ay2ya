@@ -76,10 +76,10 @@ report:
 	open "${HERE}/htmlcov/index.html"
 
 
-.PHONY: venv
-venv:
-	pipenv install
-	pipenv install --dev
+#.PHONY: venv
+#venv:
+#	pipenv install
+#	pipenv install --dev
 
 
 .PHONY: clean
