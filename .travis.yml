@@ -11,7 +11,7 @@ env:
 
 install:
   - pip install pipenv --upgrade
-  - make venv static
+#  - make venv static
 
 before_script:
   - make resetdb
