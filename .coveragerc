@@ -2,8 +2,10 @@
 
 branch = True
 omit =
+    src/ \
     src/manage.py \
-    src/project/settings.py
+    src/project/settings.py \
+
 source = .
 
 [report]

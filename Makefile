@@ -12,7 +12,7 @@ endif
 ifeq ($(ENV_FOR_DYNACONF), travis)
 	PY :=
 	TEST_PARAMS := --failfast --keepdb --verbosity 0 --pythonpath ${PYTHONPATH}
-	PSQL_PARAMS := --host=localhost --username=ay2ya --no-password
+	PSQL_PARAMS := --host=localhost --username=postgres --no-password
 else ifeq ($(ENV_FOR_DYNACONF), heroku)
 	PY :=
 endif
