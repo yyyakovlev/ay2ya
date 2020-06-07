@@ -2,7 +2,6 @@ default:
   ALLOWED_HOSTS: []
   DATABASE_URL: ""
   DEBUG: true
-  SECRET_KEY: ""
   SENTRY_DSN: ""
   RECAPTCHA_PUBLIC_KEY: ""
   RECAPTCHA_PRIVATE_KEY: ""

@@ -5,6 +5,8 @@ import allauth
 import crispy_forms
 import dj_database_url
 import grappelli
+# import captcha
+
 from allauth import account
 from django.urls import reverse_lazy
 from dynaconf import settings as _settings
@@ -54,8 +56,9 @@ INSTALLED_APPS = [
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-RECAPTCHA_PUBLIC_KEY = "6LfzS_4UAAAAAFtlE23jsnSDt7Zr2tu1Pd3_uoDk"
-RECAPTCHA_PRIVATE_KEY = "6LfzS_4UAAAAAAkdVJb9lxNVlseZfT5Ut3HJVVIq"
+
+RECAPTCHA_PUBLIC_KEY = _settings.RECAPTCHA_PUBLIC_KEY
+RECAPTCHA_PRIVATE_KEY = _settings.RECAPTCHA_PRIVATE_KEY
 RECAPTCHA_DEFAULT_ACTION = "generic"
 RECAPTCHA_SCORE_THERSHOLD = 0.5
 
