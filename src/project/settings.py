@@ -41,22 +41,21 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "crispy_forms",
     "captcha",
+    "apps.subscription",
     "rest_framework",
     "apps.index",
     "apps.cv",
     "apps.projects",
     "apps.blog.apps.BlogConfig",
     "apps.myauth",
-    "apps.subscription",
     "apps.api",
     "allauth",
     "allauth.account",
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-
-RECAPTCHA_PUBLIC_KEY = _settings.RECAPTCHA_PUBLIC_KEY
-RECAPTCHA_PRIVATE_KEY = _settings.RECAPTCHA_PRIVATE_KEY
+RECAPTCHA_PUBLIC_KEY = "6LfzS_4UAAAAAFtlE23jsnSDt7Zr2tu1Pd3_uoDk"
+RECAPTCHA_PRIVATE_KEY = "6LfzS_4UAAAAAAkdVJb9lxNVlseZfT5Ut3HJVVIq"
 RECAPTCHA_DEFAULT_ACTION = "generic"
 RECAPTCHA_SCORE_THERSHOLD = 0.5
 
@@ -132,6 +131,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_URL = "/assets/"
+
+STATICFILES_DIRS = [
+    PROJECT_DIR / "static",
+]
+
+STATIC_ROOT = REPO_DIR / ".static"
+
+if not DEBUG:
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Sentry
 if not DEBUG:
     import sentry_sdk
@@ -146,13 +156,7 @@ if not DEBUG:
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = "/assets/"
 
-STATICFILES_DIRS = [
-    PROJECT_DIR / "static",
-]
-
-STATIC_ROOT = REPO_DIR / ".static"
 
 # @bot.message_handler()
 # if username is not None:

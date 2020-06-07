@@ -1,5 +1,5 @@
-<form action="{% url 'subscription' %}" method="post">
+<form action="{% url 'subscription' %}" method="post" class="layout">
     {% csrf_token %}
     {{ subscription_form }}
-    <button><img src="/telega/" width="35" height="30"></button>
+    <button class="btn" value="Подписаться"><span class="fa-angle-double-right" aria-hidden="true"></span></button>
 </form>
