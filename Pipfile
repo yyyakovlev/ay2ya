@@ -9,7 +9,6 @@ codecov = "*"
 coverage = "*"
 isort = "*"
 pudb = "*"
-v = {editable = true,version = "*"}
 
 [packages]
 django = "*"
