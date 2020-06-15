@@ -103,5 +103,6 @@ urlpatterns = [
     path("view_blg/", include("apps.blog.urls")),
     path("view_cv/", include("apps.cv.urls")),
     path("view_prj/", include("apps.projects.urls")),
+    path("view_zparser/", include("apps.zparser.urls")),
     path("subscription/", include("apps.subscription.urls")),
 ]

@@ -1,20 +1,14 @@
 from os import getenv
 from pathlib import Path
 
-import allauth
-import crispy_forms
 import dj_database_url
-import grappelli
-# import captcha
-
-from allauth import account
-from django.urls import reverse_lazy
+# from django.contrib import auth
 from dynaconf import settings as _settings
 
 # import telebot
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 PROJECT_DIR = Path(__file__).parent.resolve()
 BASE_DIR = PROJECT_DIR.parent.resolve()
 REPO_DIR = BASE_DIR.parent.resolve()
@@ -25,9 +19,17 @@ DEBUG = _settings.DEBUG
 
 ALLOWED_HOSTS = _settings.ALLOWED_HOSTS
 
+RECAPTCHA_PUBLIC_KEY = _settings.RECAPTCHA_SITE_KEY
+RECAPTCHA_PRIVATE_KEY = _settings.RECAPTCHA_SECRET_KEY
+RECAPTCHA_DEFAULT_ACTION = "generic"
+RECAPTCHA_SCORE_THERSHOLD = 0.5
+#
+# RECAPTCHA_PROXY = {'http': 'http://127.0.0.1:8000', 'https': 'https://127.0.0.1:8000'}
+# RECAPTCHA_DOMAIN = 'www.recaptcha.net'
+
 # bot = telebot.TeleBot(_settings.BOT_TOKEN)
 #
-# TELEGA_ADMIN = _settings.TELEGA_ADMIN
+# TG = _settings.TG
 
 
 # Application definition
@@ -50,6 +52,7 @@ INSTALLED_APPS = [
     "apps.projects",
     "apps.blog.apps.BlogConfig",
     "apps.myauth",
+    "apps.zparser",
     "apps.api",
     "allauth",
     "allauth.account",
@@ -57,10 +60,7 @@ INSTALLED_APPS = [
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-RECAPTCHA_PUBLIC_KEY = _settings.RECAPTCHA_PUBLIC_KEY
-RECAPTCHA_PRIVATE_KEY = _settings.RECAPTCHA_PRIVATE_KEY
-RECAPTCHA_DEFAULT_ACTION = "generic"
-RECAPTCHA_SCORE_THERSHOLD = 0.5
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -160,11 +160,8 @@ if not DEBUG:
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-
-# @bot.message_handler()
-# if username is not None:
-#     Client_ip = request.META['REMOTE_ADDR']
-#     bot.send_message(TELEGA_ADMIN.chatid, Client_ip + 'авторизовался на AY2YA', bot.get_me().username)
+# if auth.user_logged_in == True:
+#     bot.send_message(TG.chatid, auth.user_logged_in + 'авторизовался на AY2YA', bot.get_me().username)
 
 # LOGIN_URL = reverse_lazy("templates:sign_in")
 LOGIN_REDIRECT_URL = "/"

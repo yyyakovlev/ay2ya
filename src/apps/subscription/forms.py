@@ -1,6 +1,5 @@
 from captcha.fields import ReCaptchaField
 from django import forms
-
 from apps.subscription.models import Subscription
 
 
