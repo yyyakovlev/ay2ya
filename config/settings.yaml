@@ -2,15 +2,18 @@ default:
   ALLOWED_HOSTS: []
   DATABASE_URL: ""
   DEBUG: true
-  SECRET_KEY: ""
   SENTRY_DSN: ""
+  RECAPTCHA_SITE_KEY: ""
+  RECAPTCHA_SECRET_KEY: ""
+  BOT_TOKEN: ""
+  TELEGA_ADMIN: ""
 
 development:
   DEBUG: true
 
 heroku:
   ALLOWED_HOSTS:
-    - .yyyakovlev.herokuapp.com
+    - yyyakovlev.herokuapp.com
     - 127.0.0.1
     - localhost
   DEBUG: false

@@ -1,0 +1,11 @@
+{% load static subscription_tags %}
+
+{% block text %}
+
+<form action="{% url 'subscription' %}" method="post" class="layout">
+    {% csrf_token %}
+    {{ subscription_form }}
+</form>
+<button class="btn" value="Подписаться"><span class="fa"></span></button>
+
+{% endblock %}

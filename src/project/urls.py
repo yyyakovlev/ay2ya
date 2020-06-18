@@ -30,7 +30,7 @@ def dj(r):
 
 
 def jpg(r):
-    return r_static(STATIC_ROOT / "my_img.jpg", "img/jpeg")
+    return r_static(STATIC_ROOT / "django.png", "img/jpeg")
 
 
 def gmail(r):
@@ -95,9 +95,14 @@ urlpatterns = [
     path("video_x0/", video_x0),
     path("header_bg/", header_bg),
     path("", include("apps.index.urls")),
+    path("", include("apps.api.urls")),
+    path("account/", include("allauth.urls")),
     path("indx/", include("apps.index.urls")),
+    path("login/", include("apps.myauth.urls")),
+    path("logout/", include("apps.myauth.urls")),
     path("view_blg/", include("apps.blog.urls")),
     path("view_cv/", include("apps.cv.urls")),
     path("view_prj/", include("apps.projects.urls")),
-    # path("o/", include("apps.onboarding.urls")),
+    path("view_zparser/", include("apps.zparser.urls")),
+    path("subscription/", include("apps.subscription.urls")),
 ]

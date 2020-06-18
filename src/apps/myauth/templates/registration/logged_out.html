@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}DJANGO YYY AUTH{% endblock %}
+
+{% block text %}
+
+<table align="center" bgcolor="white" border="0">
+        <tr>
+            <td width="1000" >
+                <div class="card">
+                    <div class="card-body">
+                    <h4 class="card-title">ВЫ покинули проект DJANGO YYY</h4>
+                        <form method="post">
+                         <a  href="{% url 'login' %}">Вернуться</a>
+                        </form>
+                     </div>
+                </div>
+            </td>
+        </tr>
+</table>
+{% endblock %}

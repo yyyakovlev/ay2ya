@@ -2,29 +2,39 @@ from os import getenv
 from pathlib import Path
 
 import dj_database_url
-import grappelli
-from django.urls import reverse_lazy
+
+# from django.contrib import auth
+import requests
 from dynaconf import settings as _settings
 
+import telebot
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 PROJECT_DIR = Path(__file__).parent.resolve()
 BASE_DIR = PROJECT_DIR.parent.resolve()
 REPO_DIR = BASE_DIR.parent.resolve()
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = _settings.SECRET_KEY
-# '%jb(pw*+h=g25+bwhn7$))d8(464k7lpansid%=92mf-v_qegq'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = _settings.DEBUG
-# True
 
 ALLOWED_HOSTS = _settings.ALLOWED_HOSTS
-#     [
-#     "127.0.0.1",
-#     "localhost",
-#     "yyyakovlev.herokuapp.com",
-# ]
+
+RECAPTCHA_PUBLIC_KEY = _settings.RECAPTCHA_SITE_KEY
+RECAPTCHA_PRIVATE_KEY = _settings.RECAPTCHA_SECRET_KEY
+RECAPTCHA_DEFAULT_ACTION = "generic"
+RECAPTCHA_SCORE_THERSHOLD = 0.5
+#
+# RECAPTCHA_PROXY = {'http': 'http://127.0.0.1:8000', 'https': 'https://127.0.0.1:8000'}
+# RECAPTCHA_DOMAIN = 'www.recaptcha.net'
+
+# bot = telebot.TeleBot(_settings.BOT_TOKEN)
+#
+# TG = _settings.TG
+#
+# USERR = requests.get.__name__
+
 
 
 # Application definition
@@ -35,15 +45,26 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
+    "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # "apps.onboarding.apps.OnboardingConfig",
+    "crispy_forms",
+    "captcha",
+    "apps.subscription",
+    "rest_framework",
     "apps.index",
     "apps.cv",
     "apps.projects",
     "apps.blog.apps.BlogConfig",
-    # 'apps.myauth.apps.MyAuthConfig',
+    "apps.myauth",
+    "apps.zparser",
+    "apps.api",
+    "allauth",
+    "allauth.account",
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -76,7 +97,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "project.wsgi.application"
 
-
 # Database
 
 DATABASE_URL = _settings.DATABASE_URL
@@ -103,9 +123,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/3.0/topics/i18n/
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
 
 LANGUAGE_CODE = "ru"
 
@@ -116,6 +137,17 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+STATIC_URL = "/assets/"
+
+STATICFILES_DIRS = [
+    PROJECT_DIR / "static",
+]
+
+STATIC_ROOT = REPO_DIR / ".static"
+
+if not DEBUG:
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Sentry
 if not DEBUG:
@@ -131,25 +163,14 @@ if not DEBUG:
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = "/assets/"
 
-STATICFILES_DIRS = [
-    PROJECT_DIR / "static",
-]
-
-STATIC_ROOT = REPO_DIR / ".static"
-
+# if USERR is True:
+#     @bot.message_handler()
+#     bot.send_message(TG.chat_id, USERR + 'авторизовался на AY2YA', bot.get_me().username)
+#
 
 # LOGIN_URL = reverse_lazy("templates:sign_in")
-# LOGIN_REDIRECT_URL = reverse_lazy("templates:me")
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
-# SITE_ID = _settings.SITE_ID
-#
-# EMAIL_HOST = _settings.EMAIL_HOST
-# EMAIL_HOST_PASSWORD = _settings.EMAIL_HOST_PASSWORD
-# EMAIL_HOST_USER = _settings.EMAIL_HOST_USER
-# EMAIL_PORT = _settings.EMAIL_PORT
-# EMAIL_USE_SSL = _settings.EMAIL_USE_SSL
-# EMAIL_USE_TLS = _settings.EMAIL_USE_TLS
-#
-# EMAIL_FROM = _settings.EMAIL_FROM
+SITE_ID = 1

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}AY2YA DEV PARSE{% endblock %}
+
+{% block text %}
+
+<table align="center" bgcolor="white" border="0">
+        <tr>
+            <td width="1000" >
+        {% if user.is_authenticated %}
+                <ul>
+                     <li>{{ ZparserView.HabrParser.habr_parser() }}</li>
+                 </ul>
+
+        {% else %}
+        <span> Вы не авторизованы для просмотра списка последних заказов </span>
+
+        {% endif %}
+            </td>
+        </tr>
+</table>
+
+{% endblock %}

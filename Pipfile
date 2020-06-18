@@ -19,3 +19,8 @@ dynaconf = {extras = ["yaml"],version = "*"}
 psycopg2-binary = "*"
 sentry-sdk = "*"
 django-grappelli = "*"
+djangorestframework = "*"
+boto3 = "*"
+django-recaptcha  = "*"
+django-allauth = "*"
+telebot = "*"

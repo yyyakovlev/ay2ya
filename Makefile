@@ -60,19 +60,19 @@ sh:
 .PHONY: test
 test:
 	ENV_FOR_DYNACONF=test \
-	${PY} coverage run \
+	${RUN} coverage run \
 		src/manage.py test ${TEST_PARAMS} \
-			apps \
+			apps  \
 			project \
 
-	${PY} coverage report
-	${PY} isort --virtual-env ${VENV} --recursive --check-only ${HERE}
-	${PY} black --check ${HERE}
+	${RUN} coverage report
+	${RUN} isort --virtual-env "${VENV}" --recursive --check-only "${HERE}"
+	${RUN} black --check "${HERE}"
 
 
 .PHONY: report
 report:
-	${PY} coverage html --directory=${HERE}/htmlcov --fail-under=0
+	${RUN} coverage html --directory="${HERE}/htmlcov" --fail-under=0
 	open "${HERE}/htmlcov/index.html"
 
 
