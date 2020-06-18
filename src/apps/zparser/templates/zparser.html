@@ -11,7 +11,7 @@
             <td width="1000" >
         {% if user.is_authenticated %}
                 <ul>
-                     <li>{% Zparse %} </li>
+                     <li>{{ ZparserView.HabrParser.habr_parser() }}</li>
                  </ul>
 
         {% else %}

@@ -2,10 +2,12 @@ from os import getenv
 from pathlib import Path
 
 import dj_database_url
+
 # from django.contrib import auth
+import requests
 from dynaconf import settings as _settings
 
-# import telebot
+import telebot
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
@@ -30,6 +32,9 @@ RECAPTCHA_SCORE_THERSHOLD = 0.5
 # bot = telebot.TeleBot(_settings.BOT_TOKEN)
 #
 # TG = _settings.TG
+#
+# USERR = requests.get.__name__
+
 
 
 # Application definition
@@ -59,7 +64,6 @@ INSTALLED_APPS = [
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-
 
 
 MIDDLEWARE = [
@@ -160,8 +164,10 @@ if not DEBUG:
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-# if auth.user_logged_in == True:
-#     bot.send_message(TG.chatid, auth.user_logged_in + 'авторизовался на AY2YA', bot.get_me().username)
+# if USERR is True:
+#     @bot.message_handler()
+#     bot.send_message(TG.chat_id, USERR + 'авторизовался на AY2YA', bot.get_me().username)
+#
 
 # LOGIN_URL = reverse_lazy("templates:sign_in")
 LOGIN_REDIRECT_URL = "/"
