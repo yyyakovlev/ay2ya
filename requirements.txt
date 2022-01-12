@@ -33,7 +33,7 @@ macholib==1.14
 MarkupSafe==1.1.1
 mohawk==1.1.0
 multidict==4.7.5
-pipenv==2018.11.26
+pipenv==2022.1.8
 psycopg2-binary==2.8.5
 pycparser==2.20
 PyInstaller==3.6
